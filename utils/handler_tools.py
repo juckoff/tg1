@@ -244,7 +244,7 @@ def showing_results(message: Message) -> None:
                               data['command'],
                               datetime.datetime.now().replace(microsecond=0).isoformat(sep=' '),
                               data['city']))
-        set_hotels([(req_id, hotel['name'], hotel['price']) for hotel in hotels])
+        set_hotels([(req_id, hotel['name'], hotel['price'], hotel['id']) for hotel in hotels])
 
     bot.delete_state(message.from_user.id)
 

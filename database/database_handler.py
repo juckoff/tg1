@@ -16,7 +16,8 @@ def create_tables():
                id INTEGER PRIMARY KEY autoincrement,
                request_id INTEGER,
                name TEXT,
-               price INTEGER);
+               price INTEGER,
+               hotel_id INTEGER);
         """)
 
 
@@ -42,7 +43,7 @@ def set_hotels(hotels: list):
     """Сохраняет в базу данных записи об отелях"""
     with sq.connect("hotels.db") as con:
         cur = con.cursor()
-        cur.executemany("INSERT INTO hotels VALUES (NULL, ?, ?, ?)", hotels)
+        cur.executemany("INSERT INTO hotels VALUES (NULL, ?, ?, ?, ?)", hotels)
 
 
 def get_hotels(request_id: int):

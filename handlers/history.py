@@ -18,7 +18,7 @@ def history(message):
             if hotels:
                 reply += "Найденные отели:\n"
                 for i in range(len(hotels)):
-                    reply += f"    {i+1}. {hotels[i][0]} ({hotels[i][1]})\n"
+                    reply += f"    {i+1}. {hotels[i][0]} ({hotels[i][1]}) https://www.hotels.com/ho{hotels[i][2]}\n"
 
             else:
                 reply += "Отели найдены не были\n"
