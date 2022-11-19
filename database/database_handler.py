@@ -50,5 +50,5 @@ def get_hotels(request_id: int):
     """Возвращает записи об отелях из запроса с заданным id"""
     with sq.connect("hotels.db") as con:
         cur = con.cursor()
-        cur.execute(f"SELECT name, price FROM hotels WHERE request_id={request_id}")
+        cur.execute(f"SELECT name, price, hotel_id FROM hotels WHERE request_id={request_id}")
         return cur.fetchall()
